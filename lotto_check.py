@@ -1,6 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
 
+# get the latest version of lotto result
+print("Enter this week's version of lotto result")
+this_week = input()
+
 # get lotto number from user
 user_lotto = []
 bonus_number = 0
@@ -17,7 +21,7 @@ user_bonus = input()
 user_result = [sorted(user_lotto), int(user_bonus)]
 
 # scrap actual lotto number
-url = 'https://search.naver.com/search.naver?sm=tab_drt&where=nexearch&query=970회로또'
+url = 'https://search.naver.com/search.naver?sm=tab_drt&where=nexearch&query={}회로또'.format(this_week)
 req = requests.get(url)
 
 print(req)
